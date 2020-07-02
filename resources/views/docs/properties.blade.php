@@ -13,8 +13,6 @@
 
 <div>&nbsp;</div>
 
-@include('includes.screencast-cta')
-
 ## Public Properties {#public-properties}
 
 Livewire components store and track data as public properties on the component class.

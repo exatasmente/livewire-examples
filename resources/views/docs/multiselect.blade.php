@@ -107,7 +107,7 @@ class Multiselect extends Component
 @endverbatim
 @endslot
 @endcomponent
-@component('components.code-component', ['viewName' => 'resources/views/welcome.blade.php']) @slot('view') @verbatim
+@component('components.code-component', ['viewName' => 'resources/views/multiselect.blade.php']) @slot('view') @verbatim
 ...
 @livewire('multiselect',App\User::all())
 ...

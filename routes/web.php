@@ -1,15 +1,14 @@
 <?php
 
 use App\DocumentationPages;
-use App\PodcastEpisode;
-use App\Screencast;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 
 
-Route::redirect('/', '/multiselect');
-Route::get('/{page}', function ($slug) {
-    if (! file_exists($path = resource_path('views/docs/'.$slug.'.blade.php'))) {
+Route::redirect('/', '/docs/multiselect');
+Route::get('/docs/{page}', function ($slug) {
+    $path = resource_path('views/docs/'.$slug.'.blade.php');
+    if (! file_exists($path)) {
         abort(404);
     }
     $pages = new DocumentationPages($slug);
