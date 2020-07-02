@@ -37,7 +37,7 @@ class CardSlider extends Component
     public function render()
     {
         return view('livewire.card-slider');
-}
+    }
 }
 @endverbatim
 @endslot

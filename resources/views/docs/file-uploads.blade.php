@@ -1,23 +1,3 @@
-* [Basic Upload](#basic-upload) { .text-blue-800 }
-  * [Storing Uploaded Files](#storing-files) { .font-normal.text-sm.text-blue-800 }
-* [Handling Multiple Files](#multiple-files) { .text-blue-800 }
-* [File Validation](#file-validation) { .text-blue-800 }
-  * [Real-time Validation](#real-time-validation) { .font-normal.text-sm.text-blue-800 }
-* [Temporary Preview Urls](#preview-urls) { .text-blue-800 }
-* [Testing File Uploads](#testing-uploads) { .text-blue-800 }
-* [Uploading Directly To Amazon S3](#upload-to-s3) { .text-blue-800 }
-  * [Configuring Automatic File Cleanup](#auto-cleanup) { .font-normal.text-sm.text-blue-800 }
-* [Loading Indicators](#loading-indicators) { .text-blue-800 }
-* [Progress Indicators (And All JavaScript Events)](#js-hooks) { .text-blue-800 }
-* [JavaScript Upload API](#js-api) { .text-blue-800 }
-* [Configuration](#configuration) { .text-blue-800 }
-  * [Global Validation](#global-validation) { .font-normal.text-sm.text-blue-800 }
-  * [Global Middleware](#global-middleware) { .font-normal.text-sm.text-blue-800 }
-  * [Temporary Upload Directory](#temporary-upload-directory) { .font-normal.text-sm.text-blue-800 }
-
-<div>&nbsp;</div>
-
-@include('includes.screencast-cta')
 
 ## Basic File Upload {#basic}
 

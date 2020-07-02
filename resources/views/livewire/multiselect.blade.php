@@ -1,4 +1,4 @@
-<div x-data="{show: false}" class="w-full flex flex-col items-center  mx-auto my-2 h-12">
+<div x-data="{show: false}" class="w-full flex flex-col items-center  mx-auto my-4 ">
     <div class="inline-block relative w-full">
         <div class="flex flex-col items-center relative ">
             <div x-on:click="show = true" class="w-full">

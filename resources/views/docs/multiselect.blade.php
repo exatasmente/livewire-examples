@@ -44,33 +44,34 @@ class Multiselect extends Component
 @endverbatim
 @endslot
 @slot('view') @verbatim
-<div x-data="{show: false}" class="w-full flex flex-col items-center h-64 mx-auto">
+<div x-data="{show: false}" class="w-full flex flex-col items-center  mx-auto my-4 ">
     <div class="inline-block relative w-full">
-        <div class="flex flex-col items-center relative">
+        <div class="flex flex-col items-center relative ">
             <div x-on:click="show = true" class="w-full">
-                <div class="my-2 p-1 flex border border-gray-200 bg-white rounded svelte-1l8159u">
+                <div class="p-2 flex border border-gray-400 bg-white rounded">
                     <div class="flex flex-auto flex-wrap">
-                        @foreach($this->selected as $index => $item)
-                            <div class="flex justify-center items-center m-1 font-medium py-1 px-2 bg-white rounded-full text-teal-700 bg-teal-100 border border-teal-300 "
-                            key="{{$item['value']}}">
-                                <div class="text-xs font-normal leading-none max-w-full flex-initial">
-                                    {{$item['name']}}
-                                </div>
-                                <div class="flex flex-auto flex-row-reverse">
-                                    <div wire:click="remove({{$index}})">
-                                        <svg class="fill-current h-6 w-6 " role="button" viewBox="0 0 20 20">
-                                            <path d="M14.348,14.849c-0.469,0.469-1.229,0.469-1.697,0L10,11.819l-2.651,3.029c-0.469,0.469-1.229,0.469-1.697,0 c-0.469-0.469-0.469-1.229,0-1.697l2.758-3.15L5.651,6.849c-0.469-0.469-0.469-1.228,0-1.697s1.228-0.469,1.697,0L10,8.183 l2.651-3.031c0.469-0.469,1.228-0.469,1.697,0s0.469,1.229,0,1.697l-2.758,3.152l2.758,3.15 C14.817,13.62,14.817,14.38,14.348,14.849z" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
                         @if( count($this->selected) == 0)
                             <div class="flex-1">
-                                <span class="bg-transparent p-1 px-2 appearance-none outline-none h-full w-full text-gray-800">
-                                    Select a option
-                                </span>
+                            <span class="bg-transparent p-2  appearance-none outline-none h-full w-full text-gray-600">
+                                Select a option
+                            </span>
                             </div>
+                        @else
+                            @foreach($this->selected as $index => $item)
+                                <li class="flex justify-center items-center m-1 font-medium py-1 px-2 bg-white rounded-full text-teal-700 bg-teal-100 border border-teal-300 "
+                                    key="{{$item['value']}}">
+                                    <div class="text-xs font-normal leading-none max-w-full flex-initial">
+                                        {{$item['name']}}
+                                    </div>
+                                    <div class="flex flex-auto flex-row-reverse">
+                                        <div wire:click="remove({{$index}})">
+                                            <svg class="fill-current h-6 w-6 " role="button" viewBox="0 0 20 20">
+                                                <path d="M14.348,14.849c-0.469,0.469-1.229,0.469-1.697,0L10,11.819l-2.651,3.029c-0.469,0.469-1.229,0.469-1.697,0 c-0.469-0.469-0.469-1.229,0-1.697l2.758-3.15L5.651,6.849c-0.469-0.469-0.469-1.228,0-1.697s1.228-0.469,1.697,0L10,8.183 l2.651-3.031c0.469-0.469,1.228-0.469,1.697,0s0.469,1.229,0,1.697l-2.758,3.152l2.758,3.15 C14.817,13.62,14.817,14.38,14.348,14.849z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </li>
+                            @endforeach
                         @endif
                     </div>
                     <div class="text-gray-300 w-8 py-1 pl-2 pr-1 border-l flex items-center border-gray-200">
@@ -84,7 +85,7 @@ class Multiselect extends Component
                 </div>
             </div>
             <div class="w-full px-4">
-                <div x-show.transition.origin.top="show == true" class="absolute shadow top-100 bg-white z-40 w-full lef-0 rounded max-h-select overflow-y-auto"  x-on:click.away="show = false">
+                <div x-show.transition.origin.top="show == true" class="absolute shadow  bg-white z-40 w-full left-0 rounded-b overflow-y-auto"  x-on:click.away="show = false">
                     <div class="flex flex-col w-full">
                         @foreach($data as $index => $option)
                             <div wire:key="{{$option['value']}}">
