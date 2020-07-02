@@ -7,15 +7,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 
 
-// Home Page.
-Route::get('/', function () {
-    return view('home', [
-        'title' => 'Livewire Examples',
-    ]);
-});
-
-Route::redirect('/docs', '/docs/multiselect');
-Route::get('/docs/{page}', function ($slug) {
+Route::redirect('/', '/multiselect');
+Route::get('/{page}', function ($slug) {
     if (! file_exists($path = resource_path('views/docs/'.$slug.'.blade.php'))) {
         abort(404);
     }
