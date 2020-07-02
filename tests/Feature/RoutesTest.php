@@ -15,12 +15,6 @@ class RoutesTest extends TestCase
         // Home Page
         $this->get('/')->assertSuccessful();
 
-        // Screencasts
-        $this->followingRedirects()->get('/screencasts')->assertSuccessful();
-        Screencast::all()->each(function ($screencast) {
-            $this->get('/screencasts/'.$screencast->slug)->assertSuccessful();
-        });
-
         // Docs
         $this->withoutExceptionHandling()->followingRedirects()->get('/docs')->assertSuccessful();
 
@@ -28,10 +22,5 @@ class RoutesTest extends TestCase
             $this->get('/docs/'.$slug)->assertSuccessful();
         });
 
-        // Podcasts
-        $this->get('/podcast')->assertSuccessful();
-        PodcastEpisode::all()->each(function ($podcast) {
-            $this->get('/podcasts/'.$podcast->filename)->assertSuccessful();
-        });
     }
 }

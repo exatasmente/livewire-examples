@@ -1,19 +1,58 @@
-<div x-data="{show: false}" class="w-full flex flex-col items-center  mx-auto my-2 h-12">
+
+<h2 class="text-3xl font-semibold">Multiselect</h2>
+@livewire('multiselect',['users' => App\User::all()])
+@component('components.code-component', ['className' => 'App\Http\Livewire\Multiselect.php', 'viewName' => 'resources/views/livewire/multiselect.blade.php']) @slot('class') @verbatim
+use Livewire\Component;
+class Multiselect extends Component
+{
+    public $data;
+
+    public function mount($users)
+    {
+        $this->data = $users->map(function ($user) {
+            return ['value' => $user->id, 'name' => $user->name, 'selected'=> false];
+        })->toArray();
+    }
+    public function remove($index)
+    {
+        $this->data[$index]['selected'] = false;
+    }
+    public function getOption($index)
+    {
+        return $this->data;
+    }
+    public function add($index)
+    {
+        if($this->data[$index]['selected'] == true){
+            return;
+        }
+        $this->data[$index]['selected'] = true;
+    }
+
+    public function getSelectedProperty()
+    {
+        return array_filter($this->data,function($option){
+            return $option['selected'] == true;
+        });
+    }
+
+    public function render()
+    {
+        return view('livewire.multiselect');
+    }
+}
+@endverbatim
+@endslot
+@slot('view') @verbatim
+<div x-data="{show: false}" class="w-full flex flex-col items-center h-64 mx-auto">
     <div class="inline-block relative w-full">
-        <div class="flex flex-col items-center relative ">
+        <div class="flex flex-col items-center relative">
             <div x-on:click="show = true" class="w-full">
-                <div class="p-2 flex border border-gray-400 bg-white rounded">
+                <div class="my-2 p-1 flex border border-gray-200 bg-white rounded svelte-1l8159u">
                     <div class="flex flex-auto flex-wrap">
-                        @if( count($this->selected) == 0)
-                            <div class="flex-1">
-                                <span class="bg-transparent p-2  appearance-none outline-none h-full w-full text-gray-600">
-                                    Select a option
-                                </span>
-                            </div>
-                        @else
                         @foreach($this->selected as $index => $item)
-                            <li class="flex justify-center items-center m-1 font-medium py-1 px-2 bg-white rounded-full text-teal-700 bg-teal-100 border border-teal-300 "
-                                 key="{{$item['value']}}">
+                            <div class="flex justify-center items-center m-1 font-medium py-1 px-2 bg-white rounded-full text-teal-700 bg-teal-100 border border-teal-300 "
+                            key="{{$item['value']}}">
                                 <div class="text-xs font-normal leading-none max-w-full flex-initial">
                                     {{$item['name']}}
                                 </div>
@@ -24,8 +63,14 @@
                                         </svg>
                                     </div>
                                 </div>
-                            </li>
+                            </div>
                         @endforeach
+                        @if( count($this->selected) == 0)
+                            <div class="flex-1">
+                                <span class="bg-transparent p-1 px-2 appearance-none outline-none h-full w-full text-gray-800">
+                                    Select a option
+                                </span>
+                            </div>
                         @endif
                     </div>
                     <div class="text-gray-300 w-8 py-1 pl-2 pr-1 border-l flex items-center border-gray-200">
@@ -39,7 +84,7 @@
                 </div>
             </div>
             <div class="w-full px-4">
-                <div x-show.transition.origin.top="show == true" class="absolute shadow  bg-white z-40 w-full left-0 rounded-b overflow-y-auto"  x-on:click.away="show = false">
+                <div x-show.transition.origin.top="show == true" class="absolute shadow top-100 bg-white z-40 w-full lef-0 rounded max-h-select overflow-y-auto"  x-on:click.away="show = false">
                     <div class="flex flex-col w-full">
                         @foreach($data as $index => $option)
                             <div wire:key="{{$option['value']}}">
@@ -59,3 +104,14 @@
         </div>
     </div>
 </div>
+@endverbatim
+@endslot
+@endcomponent
+@component('components.code-component', ['viewName' => 'resources/views/welcome.blade.php']) @slot('view') @verbatim
+...
+@livewire('multiselect',App\User::all())
+...
+@endverbatim
+@endslot
+@endcomponent
+

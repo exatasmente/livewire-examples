@@ -5,44 +5,27 @@ namespace App;
 class DocumentationPages
 {
     protected $pages = [
-        'Quickstart' => 'quickstart',
-        'The Essentials' => [
-            'Installation' => 'installation',
-            'Making Components' => 'making-components',
-            'Rendering Components' => 'rendering-components',
-            'Properties' => 'properties',
-            'Actions' => 'actions',
-            'Events' => 'events',
-            'Lifecycle Hooks' => 'lifecycle-hooks',
+        'Forms' =>[
+            'Inputs' =>[
+                'Select' => 'input-select',
+                'File'   => 'input-file',
+                'Radio'  => 'input-radio',
+                'Checkbox' => 'input-checkbox'
+            ],
+            'Multi Select' => 'multiselect',
+            'Formatted Input' => 'formatted-input',
+            'Saving State' => 'saving-state',
+            'Add Field'    => 'add-field',
+            'Toggle'       => 'toggle',
+            'Login Form'   => 'login-form',
+            'Register Form' => 'register-form',
+            'Custom Input Form' => 'custom-input-form'
         ],
-        'Component Features' => [
-            'Validation' => 'input-validation',
-            'File Uploads' => 'file-uploads',
-            'Authorization' => 'authorization',
-            'Pagination' => 'pagination',
-            'Redirecting' => 'redirecting',
-            'Flash Messages' => 'flash-messages',
-            'Nesting Components' => 'nesting-components',
-        ],
-        'UI Niceties' => [
-            'Loading States' => 'loading-states',
-            'Polling' => 'polling',
-            'Prefetching' => 'prefetching',
-            'Offline State' => 'offline-state',
-            'Dirty States' => 'dirty-states',
-            'Defer Loading' => 'defer-loading',
-        ],
-        'JS Integrations' => [
-            'AlpineJS' => 'alpine-js',
-            'Turbolinks' => 'turbolinks',
-            'Laravel Echo' => 'laravel-echo',
-        ],
-        'Testing' => 'testing',
-        'Security' => 'security',
-        'Troubleshooting' => 'troubleshooting',
-        'Package Development' => 'package-dev',
-        'Artisan Commands' => 'artisan-commands',
-        'API Reference' => 'api',
+        'Components' =>[
+            'Card Slider'  => 'card-slider',
+            'Step Bar'     => 'progress'
+        ]
+
     ];
 
     protected $currentUri;
