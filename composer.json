@@ -15,7 +15,6 @@
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
-        "laravel/socialite": "^4.3",
         "laravel/tinker": "^2.0",
         "livewire/livewire": "^1.0",
         "michelf/php-markdown": "^1.9"
@@ -62,6 +61,10 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "post-install-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "php artisan migrate:fresh --force --seed"
         ]
     }
 }
