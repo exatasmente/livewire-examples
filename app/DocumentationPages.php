@@ -6,24 +6,24 @@ class DocumentationPages
 {
     protected $pages = [
         'Forms' =>[
-            'Inputs' =>[
-                'Select' => 'input-select',
-                'File'   => 'input-file',
-                'Radio'  => 'input-radio',
-                'Checkbox' => 'input-checkbox'
-            ],
+//            'Inputs' =>[
+//                'Select' => 'input-select',
+//                'File'   => 'input-file',
+//                'Radio'  => 'input-radio',
+//                'Checkbox' => 'input-checkbox'
+//            ],
             'Multi Select' => 'multiselect',
-            'Formatted Input' => 'formatted-input',
-            'Saving State' => 'saving-state',
+//            'Formatted Input' => 'formatted-input',
+//            'Saving State' => 'saving-state',
             'Add Field'    => 'add-field',
-            'Toggle'       => 'toggle',
-            'Login Form'   => 'login-form',
-            'Register Form' => 'register-form',
-            'Custom Input Form' => 'custom-input-form'
+//            'Toggle'       => 'toggle',
+//            'Login Form'   => 'login-form',
+//            'Register Form' => 'register-form',
+//            'Custom Input Form' => 'custom-input-form'
         ],
         'Components' =>[
             'Card Slider'  => 'card-slider',
-            'Step Bar'     => 'progress'
+//            'Step Bar'     => 'progress'
         ]
 
     ];
