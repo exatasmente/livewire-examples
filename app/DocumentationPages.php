@@ -8,12 +8,12 @@ class DocumentationPages
         'Forms' =>[
 //            'Inputs' =>[
 //                'Select' => 'input-select',
-//                'File'   => 'input-file',
+                'File'   => 'input-file',
 //                'Radio'  => 'input-radio',
 //                'Checkbox' => 'input-checkbox'
 //            ],
             'Multi Select' => 'multiselect',
-//            'Formatted Input' => 'formatted-input',
+            'Formatted Input' => 'formatted-input',
 //            'Saving State' => 'saving-state',
             'Add Field'    => 'add-field',
 //            'Toggle'       => 'toggle',
@@ -25,6 +25,7 @@ class DocumentationPages
             'Card Slider'  => 'card-slider',
 //            'Step Bar'     => 'progress'
         ]
+
 
     ];
 
