@@ -12,7 +12,7 @@
     "devDependencies": {
         "alpinejs": "^2.3.1",
         "animateplus": "^2.1.1",
-        "axios": "^0.19",
+        "axios": "^0.21",
         "cross-env": "^7.0",
         "css-loader": "^2.1.1",
         "docsearch.js": "^2.6.2",
